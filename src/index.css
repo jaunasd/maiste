@@ -1,0 +1,24 @@
+/* Atstatome bazinius nustatymus, kad Vite netrukdytų tavo dizainui */
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  width: 100%;
+  display: block; /* Pašaliname flex, kuris viską gadino */
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pašaliname Vite numatytąsias spalvas, nes jos nustatytos pačiame .jsx faile */
+* {
+  box-sizing: border-box;
+}
