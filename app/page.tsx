@@ -418,7 +418,7 @@ function AdminLogin({ onLogin, onBack }: { onLogin: () => void; onBack: () => vo
         setErr(true);
         setTimeout(() => setErr(false), 2000);
       }
-    } catch(e) {
+    } catch {
       setErr(true);
       setTimeout(() => setErr(false), 2000);
     } finally {
@@ -436,7 +436,7 @@ function AdminLogin({ onLogin, onBack }: { onLogin: () => void; onBack: () => vo
         <input type="password" placeholder="Slaptažodis" value={pw} onChange={e => setPw(e.target.value)}
           className={`alinput${err ? " err" : ""}`} />
         {err && <div style={{ color: "#d9603a", fontSize: ".83rem", marginBottom: ".7rem" }}>❌ Neteisingas slaptažodis</div>}
-        <button onClick={submit} className="albtn">Prisijungti →</button>
+        <button onClick={submit} className="albtn" disabled={loading}>{loading ? "Jungiamasi..." : "Prisijungti →"}</button>
         <button onClick={onBack} style={{ marginTop: "1rem", background: "none", border: "none", color: "#a08878", fontSize: ".82rem", cursor: "pointer", textDecoration: "underline" }}>← Grįžti</button>
       </div>
     </div>
@@ -502,7 +502,7 @@ export default function LandingPage() {
   const [name, setName] = useState("");
   const [regName, setRegName] = useState("");
   const [adminAuthed, setAdminAuthed] = useState(false);
-  const [tapCount, setTapCount] = useState(0);
+  const [, setTapCount] = useState(0);
 
   const fetchRegs = async () => {
     const { data, error } = await supabase
@@ -516,8 +516,12 @@ export default function LandingPage() {
     const s = document.createElement("style");
     s.textContent = CSS;
     document.head.appendChild(s);
-    fetchRegs();
     return () => s.remove();
+  }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchRegs();
   }, []);
 
   const scrollToForm = () => {
@@ -683,9 +687,9 @@ export default function LandingPage() {
             <h2 className="sec-title">Klauskite kaip<br /><em>gero draugo.</em></h2>
             <p className="sec-body"><strong>Tiesiog paklauskite lietuviškai</strong> — DI atsako per sekundes.</p>
             <div className="ai-examples">
-              <div className="ai-ex">💬 <strong>„Kiek kalorijų šaltibarščiuose?"</strong></div>
-              <div className="ai-ex">💬 <strong>„Ar galiu dar suvalgyti sūrelį?"</strong></div>
-              <div className="ai-ex">💬 <strong>„Ką valgyti, kad gautum daugiau baltymų?"</strong></div>
+              <div className="ai-ex">💬 <strong>{'„Kiek kalorijų šaltibarščiuose?"'}</strong></div>
+              <div className="ai-ex">💬 <strong>{'„Ar galiu dar suvalgyti sūrelį?"'}</strong></div>
+              <div className="ai-ex">💬 <strong>{'„Ką valgyti, kad gautum daugiau baltymų?"'}</strong></div>
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}><AIChatMockup /></div>

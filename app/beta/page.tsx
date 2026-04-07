@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Toaster } from 'react-hot-toast';
 import {
-  LayoutDashboard, PlusCircle, MessageCircle, Settings2, ClipboardList, Zap, User,
+  LayoutDashboard, PlusCircle, MessageCircle, Settings2, ClipboardList, User,
 } from 'lucide-react';
 
 import { supabase } from '@/lib/supabase';
@@ -153,7 +153,6 @@ export default function App() {
       }
     };
     initApp();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadTodayData = async (uid: string) => {
@@ -185,7 +184,7 @@ export default function App() {
       [ActivityLevel.VERY_ACTIVE]: 1.9,
     };
 
-    let tdee = bmr * multipliers[user.activityLevel];
+    const tdee = bmr * multipliers[user.activityLevel];
     let targetCalories: number;
 
     if (user.goalType === GoalType.LOSE_WEIGHT) {
@@ -469,7 +468,7 @@ export default function App() {
         <DailyCheckin
           user={user}
           onClose={() => setShowCheckin(false)}
-          onComplete={(data) => {
+          onComplete={() => {
             handleUpdateUser({ lastCheckinTimestamp: Date.now() });
             setShowCheckin(false);
           }}

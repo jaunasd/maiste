@@ -118,7 +118,7 @@ const QUESTIONS: Question[] = [
   },
 ];
 
-export function NutritionPlan({ user, targets, userId }: Props) {
+export function NutritionPlan({ user, targets }: Props) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [customInput, setCustomInput] = useState('');

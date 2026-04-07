@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { DailyLog, FoodItem, MealType, NutritionTargets, UserProfile } from '@/types';
-import { Trash2, Pencil, Droplets, Plus, Minus, Scale } from 'lucide-react';
+import { Trash2, Pencil, Droplets, Plus, Scale } from 'lucide-react';
 
 interface Props {
   user: UserProfile;
@@ -38,8 +38,7 @@ function MacroBar({ label, current, target, color }: { label: string; current: n
   );
 }
 
-export function Dashboard({ user, dailyLog, targets, onAddWater, onResetWater, onOpenAddFood, onRemoveFood, onEditFood, onOpenWeight }: Props) {
-  const [longPressId, setLongPressId] = useState<string | null>(null);
+export function Dashboard({ user, dailyLog, targets, onAddWater, onOpenAddFood, onRemoveFood, onEditFood, onOpenWeight }: Props) {
 
   const totalCalories = dailyLog.items.reduce((s, i) => s + Math.round(i.nutrition.calories * i.servingSize / 100), 0);
   const totalProtein = dailyLog.items.reduce((s, i) => s + Math.round(i.nutrition.protein * i.servingSize / 100), 0);

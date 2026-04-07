@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { UserProfile } from '@/types';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface Props {
@@ -19,10 +19,9 @@ const QUESTIONS = [
   { key: 'vegetables', question: 'Ar valgėte daržovių?', emoji: '🥦' },
 ];
 
-export function DailyCheckin({ user, onClose, onComplete }: Props) {
+export function DailyCheckin({ onClose, onComplete }: Props) {
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
-  const [exiting, setExiting] = useState(false);
 
   const current = QUESTIONS[idx];
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { UserProfile } from '@/types';
 import { supabase } from '@/lib/supabase';
-import { ChevronLeft, TrendingDown, TrendingUp } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface Props {
@@ -18,7 +18,7 @@ interface WeightEntry { weight: number; recorded_at: string }
 export function WeightProgress({ user, userId, onUpdateWeight, onBack }: Props) {
   const [history, setHistory] = useState<WeightEntry[]>([]);
   const [newWeight, setNewWeight] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     if (!userId) return;
@@ -44,7 +44,6 @@ export function WeightProgress({ user, userId, onUpdateWeight, onBack }: Props) 
   };
 
   const diff = user.currentWeight - user.goalWeight;
-  const isLosingWeight = diff > 0;
   const minW = Math.min(...history.map(h => h.weight), user.goalWeight) - 2;
   const maxW = Math.max(...history.map(h => h.weight)) + 2;
   const range = maxW - minW || 10;

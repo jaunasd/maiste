@@ -385,6 +385,7 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
               <div className="relative w-full aspect-[4/3] bg-gray-900 flex items-center justify-center overflow-hidden">
                 {photoPreview ? (
                   <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={photoPreview} alt="Nuotrauka" className="w-full h-full object-cover" />
                     {analyzing && (
                       <>
