@@ -237,26 +237,26 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 function PhoneCamera() {
   return (
     <div className="phone">
-      <div className="phone-notch"/>
+      <div className="phone-notch" />
       <div className="phone-screen">
         <div className="ps-head">📸 Nufotografuok</div>
         <div className="cam-vf">
-          <div className="cam-food">🥗</div><div className="cam-scan"/>
-          <div className="cam-c tl"/><div className="cam-c tr"/>
-          <div className="cam-c bl"/><div className="cam-c br"/>
-          <div className="cam-dot"/>
+          <div className="cam-food">🥗</div><div className="cam-scan" />
+          <div className="cam-c tl" /><div className="cam-c tr" />
+          <div className="cam-c bl" /><div className="cam-c br" />
+          <div className="cam-dot" />
         </div>
         <div className="hc">
           <div className="hc-top">
             <div className="hc-lbl">Sveikumo lygis</div>
-            <div style={{display:"flex",alignItems:"baseline",gap:".12rem"}}><div className="hc-score">87</div><div className="hc-max">/100</div></div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: ".12rem" }}><div className="hc-score">87</div><div className="hc-max">/100</div></div>
           </div>
           <div className="hc-food">🥗 Graikiškos salotos</div>
           <div className="hb-row">
-            <div className="hb"><div className="hb-l">Kalorijos</div><div className="hb-t"><div className="hb-f k" style={{width:"52%"}}/></div><div className="hb-v">320</div></div>
-            <div className="hb"><div className="hb-l">Baltymai</div><div className="hb-t"><div className="hb-f p" style={{width:"35%"}}/></div><div className="hb-v">8g</div></div>
-            <div className="hb"><div className="hb-l">Riebalai</div><div className="hb-t"><div className="hb-f f" style={{width:"45%"}}/></div><div className="hb-v">14g</div></div>
-            <div className="hb"><div className="hb-l">Angl.</div><div className="hb-t"><div className="hb-f c" style={{width:"68%"}}/></div><div className="hb-v">38g</div></div>
+            <div className="hb"><div className="hb-l">Kalorijos</div><div className="hb-t"><div className="hb-f k" style={{ width: "52%" }} /></div><div className="hb-v">320</div></div>
+            <div className="hb"><div className="hb-l">Baltymai</div><div className="hb-t"><div className="hb-f p" style={{ width: "35%" }} /></div><div className="hb-v">8g</div></div>
+            <div className="hb"><div className="hb-l">Riebalai</div><div className="hb-t"><div className="hb-f f" style={{ width: "45%" }} /></div><div className="hb-v">14g</div></div>
+            <div className="hb"><div className="hb-l">Angl.</div><div className="hb-t"><div className="hb-f c" style={{ width: "68%" }} /></div><div className="hb-v">38g</div></div>
           </div>
           <div className="hc-badge good">✅ Sveikas pasirinkimas</div>
         </div>
@@ -268,7 +268,7 @@ function PhoneCamera() {
 function PhoneAI() {
   return (
     <div className="phone">
-      <div className="phone-notch"/>
+      <div className="phone-notch" />
       <div className="phone-screen">
         <div className="ps-head">AI padėjėjas 🤖</div>
         <div className="ub">Ar galiu vakare suvalgyti sūrelį?</div>
@@ -282,27 +282,27 @@ function PhoneAI() {
 
 function PhotoPhone() {
   return (
-    <div className="phone" style={{width:"240px"}}>
-      <div className="phone-notch"/>
+    <div className="phone" style={{ width: "240px" }}>
+      <div className="phone-notch" />
       <div className="phone-screen">
         <div className="ps-head">📸 Nuotrauka</div>
-        <div className="cam-vf" style={{height:"130px"}}>
-          <div className="cam-food" style={{fontSize:"3.8rem"}}>🍝</div><div className="cam-scan"/>
-          <div className="cam-c tl"/><div className="cam-c tr"/>
-          <div className="cam-c bl"/><div className="cam-c br"/>
-          <div className="cam-dot"/>
+        <div className="cam-vf" style={{ height: "130px" }}>
+          <div className="cam-food" style={{ fontSize: "3.8rem" }}>🍝</div><div className="cam-scan" />
+          <div className="cam-c tl" /><div className="cam-c tr" />
+          <div className="cam-c bl" /><div className="cam-c br" />
+          <div className="cam-dot" />
         </div>
         <div className="hc">
           <div className="hc-top">
             <div className="hc-lbl">Sveikumo lygis</div>
-            <div style={{display:"flex",alignItems:"baseline",gap:".12rem"}}><div className="hc-score">72</div><div className="hc-max">/100</div></div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: ".12rem" }}><div className="hc-score">72</div><div className="hc-max">/100</div></div>
           </div>
           <div className="hc-food">🍝 Spagečiai bolognese</div>
           <div className="hb-row">
-            <div className="hb"><div className="hb-l">Kalorijos</div><div className="hb-t"><div className="hb-f k" style={{width:"74%"}}/></div><div className="hb-v">620</div></div>
-            <div className="hb"><div className="hb-l">Baltymai</div><div className="hb-t"><div className="hb-f p" style={{width:"55%"}}/></div><div className="hb-v">32g</div></div>
-            <div className="hb"><div className="hb-l">Riebalai</div><div className="hb-t"><div className="hb-f f" style={{width:"60%"}}/></div><div className="hb-v">22g</div></div>
-            <div className="hb"><div className="hb-l">Angl.</div><div className="hb-t"><div className="hb-f c" style={{width:"80%"}}/></div><div className="hb-v">68g</div></div>
+            <div className="hb"><div className="hb-l">Kalorijos</div><div className="hb-t"><div className="hb-f k" style={{ width: "74%" }} /></div><div className="hb-v">620</div></div>
+            <div className="hb"><div className="hb-l">Baltymai</div><div className="hb-t"><div className="hb-f p" style={{ width: "55%" }} /></div><div className="hb-v">32g</div></div>
+            <div className="hb"><div className="hb-l">Riebalai</div><div className="hb-t"><div className="hb-f f" style={{ width: "60%" }} /></div><div className="hb-v">22g</div></div>
+            <div className="hb"><div className="hb-l">Angl.</div><div className="hb-t"><div className="hb-f c" style={{ width: "80%" }} /></div><div className="hb-v">68g</div></div>
           </div>
           <div className="hc-badge warn">⚠️ Daug angliavandenių</div>
         </div>
@@ -316,18 +316,18 @@ function ProgressPhone() {
   return (
     <div className="prog-phone-wrap">
       <div className="prog-phone">
-        <div className="prog-phone-notch"/>
+        <div className="prog-phone-notch" />
         <div className="prog-phone-screen">
           <div className="prog-screen-head">
             <div className="prog-screen-title">Progresas 📊</div>
             <div className="prog-screen-sub">Savaitė</div>
           </div>
           <div className="prog-ring-wrap">
-            <div style={{position:"relative",width:110,height:110}}>
+            <div style={{ position: "relative", width: 110, height: 110 }}>
               <svg viewBox="0 0 100 100" width="110" height="110">
-                <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(122,79,53,.12)" strokeWidth="9"/>
+                <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(122,79,53,.12)" strokeWidth="9" />
                 <circle cx="50" cy="50" r={r} fill="none" stroke="#d9603a" strokeWidth="9"
-                  strokeDasharray={`${circ*.72} ${circ*.28}`} strokeLinecap="round" transform="rotate(-90 50 50)"/>
+                  strokeDasharray={`${circ * .72} ${circ * .28}`} strokeLinecap="round" transform="rotate(-90 50 50)" />
               </svg>
               <div className="prog-ring-center">
                 <div className="prog-ring-num">1&nbsp;430</div>
@@ -377,7 +377,7 @@ function PcMockup() {
     <div className="pc-wrap">
       <div className="pc">
         <div className="pc-screen">
-          <div className="pc-dots"><div className="pc-dot"/><div className="pc-dot"/><div className="pc-dot"/></div>
+          <div className="pc-dots"><div className="pc-dot" /><div className="pc-dot" /><div className="pc-dot" /></div>
           <div className="pc-t">Jūsų tikslai šią savaitę</div>
           <div className="pc-stats">
             <div className="pc-stat"><div className="pc-sn">5/7</div><div className="pc-sl">Dienų tiksle</div></div>
@@ -385,15 +385,15 @@ function PcMockup() {
             <div className="pc-stat"><div className="pc-sn">82%</div><div className="pc-sl">Baltymai</div></div>
           </div>
           <div className="pc-bars">
-            {[["Kalorijos","1 430 / 1 800","79%"],["Baltymai","78 / 95g","82%"],["Riebalai","48 / 60g","80%"]].map(([l,v,w])=>(
+            {[["Kalorijos", "1 430 / 1 800", "79%"], ["Baltymai", "78 / 95g", "82%"], ["Riebalai", "48 / 60g", "80%"]].map(([l, v, w]) => (
               <div className="pc-bar" key={l}>
                 <div className="pc-bl"><span>{l}</span><span>{v}</span></div>
-                <div className="pc-bt"><div className="pc-bf" style={{width:w}}/></div>
+                <div className="pc-bt"><div className="pc-bf" style={{ width: w }} /></div>
               </div>
             ))}
           </div>
         </div>
-        <div className="pc-stand"/><div className="pc-base"/>
+        <div className="pc-stand" /><div className="pc-base" />
       </div>
     </div>
   );
@@ -402,23 +402,42 @@ function PcMockup() {
 function AdminLogin({ onLogin, onBack }: { onLogin: () => void; onBack: () => void }) {
   const [pw, setPw] = useState("");
   const [err, setErr] = useState(false);
-  const submit = () => {
-    if (pw === "maiste2026") { onLogin(); }
-    else { setErr(true); setTimeout(() => setErr(false), 2000); }
+  const [loading, setLoading] = useState(false);
+
+  const submit = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw })
+      });
+      if (res.ok) {
+        onLogin();
+      } else {
+        setErr(true);
+        setTimeout(() => setErr(false), 2000);
+      }
+    } catch(e) {
+      setErr(true);
+      setTimeout(() => setErr(false), 2000);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="admin-login">
       <div className="admin-login-box">
-        <div style={{fontSize:"2.5rem",marginBottom:".5rem"}}>🔐</div>
-        <div style={{fontFamily:"'Fraunces',serif",fontWeight:900,fontSize:"1.5rem",color:"#2e1a0f",marginBottom:".2rem"}}>
-          Maistė<span style={{color:"#d9603a"}}>.</span> Admin
+        <div style={{ fontSize: "2.5rem", marginBottom: ".5rem" }}>🔐</div>
+        <div style={{ fontFamily: "'Fraunces',serif", fontWeight: 900, fontSize: "1.5rem", color: "#2e1a0f", marginBottom: ".2rem" }}>
+          Maistė<span style={{ color: "#d9603a" }}>.</span> Admin
         </div>
-        <div style={{fontSize:".85rem",color:"#a08878",marginBottom:"1.8rem"}}>Įveskite slaptažodį</div>
-        <input type="password" placeholder="Slaptažodis" value={pw} onChange={e=>setPw(e.target.value)}
-            className={`alinput${err?" err":""}`}/>
-        {err && <div style={{color:"#d9603a",fontSize:".83rem",marginBottom:".7rem"}}>❌ Neteisingas slaptažodis</div>}
+        <div style={{ fontSize: ".85rem", color: "#a08878", marginBottom: "1.8rem" }}>Įveskite slaptažodį</div>
+        <input type="password" placeholder="Slaptažodis" value={pw} onChange={e => setPw(e.target.value)}
+          className={`alinput${err ? " err" : ""}`} />
+        {err && <div style={{ color: "#d9603a", fontSize: ".83rem", marginBottom: ".7rem" }}>❌ Neteisingas slaptažodis</div>}
         <button onClick={submit} className="albtn">Prisijungti →</button>
-        <button onClick={onBack} style={{marginTop:"1rem",background:"none",border:"none",color:"#a08878",fontSize:".82rem",cursor:"pointer",textDecoration:"underline"}}>← Grįžti</button>
+        <button onClick={onBack} style={{ marginTop: "1rem", background: "none", border: "none", color: "#a08878", fontSize: ".82rem", cursor: "pointer", textDecoration: "underline" }}>← Grįžti</button>
       </div>
     </div>
   );
@@ -429,7 +448,7 @@ type Reg = { id?: string; email: string; name?: string; created_at: string };
 function AdminPanel({ regs, onBack }: { regs: Reg[]; onBack: () => void }) {
   const fmt = (iso: string) => {
     const d = new Date(iso);
-    return d.toLocaleDateString("lt-LT") + " " + d.toLocaleTimeString("lt-LT",{hour:"2-digit",minute:"2-digit"});
+    return d.toLocaleDateString("lt-LT") + " " + d.toLocaleTimeString("lt-LT", { hour: "2-digit", minute: "2-digit" });
   };
   return (
     <>
@@ -443,7 +462,7 @@ function AdminPanel({ regs, onBack }: { regs: Reg[]; onBack: () => void }) {
           <p className="admin-sub">Visi žmonės, kurie užsiregistravo į demo</p>
           <div className="admin-stats">
             <div className="admin-stat"><div className="admin-stat-n">{regs.length}</div><div className="admin-stat-l">Iš viso registracijų</div></div>
-            <div className="admin-stat"><div className="admin-stat-n">{regs.filter(r=>r.name).length}</div><div className="admin-stat-l">Nurodė vardą</div></div>
+            <div className="admin-stat"><div className="admin-stat-n">{regs.filter(r => r.name).length}</div><div className="admin-stat-l">Nurodė vardą</div></div>
             <div className="admin-stat"><div className="admin-stat-n">{regs.length > 0 ? fmt(regs[0].created_at).split(" ")[0] : "—"}</div><div className="admin-stat-l">Paskutinė registracija</div></div>
           </div>
           <div className="admin-table-wrap">
@@ -452,17 +471,17 @@ function AdminPanel({ regs, onBack }: { regs: Reg[]; onBack: () => void }) {
               <span className="admin-badge-g">{regs.length} vnt.</span>
             </div>
             {regs.length === 0 ? (
-              <div className="admin-empty">Registracijų dar nėra 🌿<br/><small style={{opacity:.6}}>Grįžkite ir užsiregistruokite</small></div>
+              <div className="admin-empty">Registracijų dar nėra 🌿<br /><small style={{ opacity: .6 }}>Grįžkite ir užsiregistruokite</small></div>
             ) : (
               <table className="admin-table">
                 <thead><tr><th>#</th><th>El. paštas</th><th>Vardas</th><th>Data</th></tr></thead>
                 <tbody>
-                  {regs.map((r,i)=>(
+                  {regs.map((r, i) => (
                     <tr key={r.id || i}>
-                      <td style={{color:"var(--gray)",fontSize:".8rem"}}>{regs.length-i}</td>
+                      <td style={{ color: "var(--gray)", fontSize: ".8rem" }}>{regs.length - i}</td>
                       <td><strong>{r.email}</strong></td>
-                      <td style={{color:r.name?"var(--brown)":"var(--gray)"}}>{r.name||"—"}</td>
-                      <td style={{color:"var(--gray)",fontSize:".82rem"}}>{fmt(r.created_at)}</td>
+                      <td style={{ color: r.name ? "var(--brown)" : "var(--gray)" }}>{r.name || "—"}</td>
+                      <td style={{ color: "var(--gray)", fontSize: ".82rem" }}>{fmt(r.created_at)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -504,9 +523,9 @@ export default function LandingPage() {
   const scrollToForm = () => {
     if (page !== "landing") {
       setPage("landing");
-      setTimeout(() => document.getElementById("reg-form")?.scrollIntoView({behavior:"smooth",block:"center"}), 100);
+      setTimeout(() => document.getElementById("reg-form")?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
     } else {
-      document.getElementById("reg-form")?.scrollIntoView({behavior:"smooth",block:"center"});
+      document.getElementById("reg-form")?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
@@ -536,29 +555,29 @@ export default function LandingPage() {
   };
 
   if (page === "admin") {
-    if (!adminAuthed) return <AdminLogin onLogin={() => setAdminAuthed(true)} onBack={() => setPage("landing")}/>;
-    return <AdminPanel regs={regs} onBack={() => setPage("landing")}/>;
+    if (!adminAuthed) return <AdminLogin onLogin={() => setAdminAuthed(true)} onBack={() => setPage("landing")} />;
+    return <AdminPanel regs={regs} onBack={() => setPage("landing")} />;
   }
 
   if (page === "privacy") return (
-    <div style={{minHeight:"100vh",background:"linear-gradient(135deg,#1a0f06,#3d2010)",display:"flex",alignItems:"center",justifyContent:"center",padding:"2rem 1rem",fontFamily:"system-ui,sans-serif"}}>
-      <div style={{background:"#fdf8f2",borderRadius:24,padding:"3rem 2.5rem",maxWidth:600,width:"100%",boxShadow:"0 32px 80px rgba(0,0,0,.45)"}}>
-        <h1 style={{fontFamily:"'Fraunces',serif",fontSize:"2rem",fontWeight:900,color:"#2e1a0f",marginBottom:"1.5rem",display:"flex",alignItems:"center",gap:".8rem"}}>
-          <span style={{fontSize:"1.8rem"}}>🛡️</span> Privatumo politika
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg,#1a0f06,#3d2010)", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem 1rem", fontFamily: "system-ui,sans-serif" }}>
+      <div style={{ background: "#fdf8f2", borderRadius: 24, padding: "3rem 2.5rem", maxWidth: 600, width: "100%", boxShadow: "0 32px 80px rgba(0,0,0,.45)" }}>
+        <h1 style={{ fontFamily: "'Fraunces',serif", fontSize: "2rem", fontWeight: 900, color: "#2e1a0f", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: ".8rem" }}>
+          <span style={{ fontSize: "1.8rem" }}>🛡️</span> Privatumo politika
         </h1>
-        <div style={{fontSize:".95rem",color:"#7a4f35",lineHeight:1.8,display:"flex",flexDirection:"column",gap:"1.2rem"}}>
-          <p><strong>1. Tikslas ir Rinkos Testavimas</strong><br/>Ši interneto svetainė yra skirta <strong style={{color:"#2e1a0f"}}>Maistė.</strong> projekto idėjos validacijai ir rinkos potencialo tyrimui. Svetainės tikslas – nustatyti vartotojų susidomėjimą būsima paslauga bei surinkti bandomąją grupę asmenų, norinčių išbandyti programėlės prototipą.</p>
-          <p><strong>2. Renkami Duomenys</strong><br/>Mes renkame minimalų kiekį asmens duomenų: jūsų el. pašto adresą bei (pasirinktinai) vardą. Šie duomenys yra saugomi saugioje duomenų bazėje, naudojant Supabase infrastruktūrą.</p>
-          <p><strong>3. Duomenų Naudojimas</strong><br/>Surinkta informacija bus naudojama išskirtinai šiems tikslams:
-            <ul style={{marginTop:".5rem",paddingLeft:"1.2rem"}}>
+        <div style={{ fontSize: ".95rem", color: "#7a4f35", lineHeight: 1.8, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+          <p><strong>1. Tikslas ir Rinkos Testavimas</strong><br />Ši interneto svetainė yra skirta <strong style={{ color: "#2e1a0f" }}>Maistė.</strong> projekto idėjos validacijai ir rinkos potencialo tyrimui. Svetainės tikslas – nustatyti vartotojų susidomėjimą būsima paslauga bei surinkti bandomąją grupę asmenų, norinčių išbandyti programėlės prototipą.</p>
+          <p><strong>2. Renkami Duomenys</strong><br />Mes renkame minimalų kiekį asmens duomenų: jūsų el. pašto adresą bei (pasirinktinai) vardą. Šie duomenys yra saugomi saugioje duomenų bazėje, naudojant Supabase infrastruktūrą.</p>
+          <p><strong>3. Duomenų Naudojimas</strong><br />Surinkta informacija bus naudojama išskirtinai šiems tikslams:
+            <ul style={{ marginTop: ".5rem", paddingLeft: "1.2rem" }}>
               <li>Informuoti jus el. paštu apie programėlės startą.</li>
               <li>Pasiūlyti galimybę išbandyti prototipą.</li>
               <li>Gauti jūsų atsiliepimus (feedback), kurie padėtų tobulinti projektą.</li>
             </ul>
           </p>
-          <p><strong>4. Jūsų Teisės ir Duomenų Trynimas</strong><br/>Mes vertiname jūsų privatumą ir užtikriname, kad jūsų duomenys nebus perleisti trečiosioms šalims. Jūs turite teisę bet kuriuo metu pareikalauti, kad jūsų duomenys būtų neatstatomai ištrinti iš mūsų sistemų. Norėdami tai padaryti, tiesiog parašykite mums laisvos formos el. laišką adresu: <strong style={{color:"#d9603a"}}>maisteapp@gmail.com</strong>.</p>
+          <p><strong>4. Jūsų Teisės ir Duomenų Trynimas</strong><br />Mes vertiname jūsų privatumą ir užtikriname, kad jūsų duomenys nebus perleisti trečiosioms šalims. Jūs turite teisę bet kuriuo metu pareikalauti, kad jūsų duomenys būtų neatstatomai ištrinti iš mūsų sistemų. Norėdami tai padaryti, tiesiog parašykite mums laisvos formos el. laišką adresu: <strong style={{ color: "#d9603a" }}>maisteapp@gmail.com</strong>.</p>
         </div>
-        <button onClick={() => {setPage("landing"); window.scrollTo(0,0);}} style={{marginTop:"2.5rem",width:"100%",background:"#d9603a",color:"#fff",fontFamily:"inherit",fontSize:"1rem",fontWeight:700,padding:".92rem",borderRadius:12,border:"none",cursor:"pointer"}}>
+        <button onClick={() => { setPage("landing"); window.scrollTo(0, 0); }} style={{ marginTop: "2.5rem", width: "100%", background: "#d9603a", color: "#fff", fontFamily: "inherit", fontSize: "1rem", fontWeight: 700, padding: ".92rem", borderRadius: 12, border: "none", cursor: "pointer" }}>
           ← Grįžti į pagrindinį puslapį
         </button>
       </div>
@@ -566,17 +585,17 @@ export default function LandingPage() {
   );
 
   if (page === "thanks") return (
-    <div style={{minHeight:"100vh",background:"linear-gradient(135deg,#1a0f06,#3d2010)",display:"flex",alignItems:"center",justifyContent:"center",padding:"1rem",fontFamily:"system-ui,sans-serif"}}>
-      <div style={{background:"#fdf8f2",borderRadius:22,padding:"2.8rem 2.4rem",maxWidth:380,width:"100%",textAlign:"center",boxShadow:"0 32px 80px rgba(0,0,0,.45)"}}>
-        <div style={{fontSize:"2.5rem",marginBottom:".5rem"}}>🎉</div>
-        <div style={{fontFamily:"'Fraunces',sans-serif",fontWeight:900,fontSize:"1.5rem",color:"#2e1a0f",marginBottom:".2rem"}}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg,#1a0f06,#3d2010)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", fontFamily: "system-ui,sans-serif" }}>
+      <div style={{ background: "#fdf8f2", borderRadius: 22, padding: "2.8rem 2.4rem", maxWidth: 380, width: "100%", textAlign: "center", boxShadow: "0 32px 80px rgba(0,0,0,.45)" }}>
+        <div style={{ fontSize: "2.5rem", marginBottom: ".5rem" }}>🎉</div>
+        <div style={{ fontFamily: "'Fraunces',sans-serif", fontWeight: 900, fontSize: "1.5rem", color: "#2e1a0f", marginBottom: ".2rem" }}>
           Ačiū, {regName}!
         </div>
-        <div style={{fontSize:".88rem",color:"#7a4f35",lineHeight:1.7,marginBottom:"1.6rem"}}>
-          Esate tarp pirmų, kurie išbandys <strong style={{color:"#2e1a0f"}}>Maistė.</strong><br/>
+        <div style={{ fontSize: ".88rem", color: "#7a4f35", lineHeight: 1.7, marginBottom: "1.6rem" }}>
+          Esate tarp pirmų, kurie išbandys <strong style={{ color: "#2e1a0f" }}>Maistė.</strong><br />
           Parašysime kai programa bus paruošta. 🌿
         </div>
-        <button onClick={() => setPage("landing")} style={{width:"100%",background:"#d9603a",color:"#fff",fontFamily:"inherit",fontSize:"1rem",fontWeight:700,padding:".92rem",borderRadius:10,border:"none",cursor:"pointer"}}>← Grįžti į puslapį</button>
+        <button onClick={() => setPage("landing")} style={{ width: "100%", background: "#d9603a", color: "#fff", fontFamily: "inherit", fontSize: "1rem", fontWeight: 700, padding: ".92rem", borderRadius: 10, border: "none", cursor: "pointer" }}>← Grįžti į puslapį</button>
       </div>
     </div>
   );
@@ -584,29 +603,29 @@ export default function LandingPage() {
   return (
     <>
       <nav className="nav">
-        <div className="nav-logo" style={{cursor:"pointer"}} onClick={() => {setPage("landing"); window.scrollTo(0,0);}}>Maistė<em>.</em></div>
+        <div className="nav-logo" style={{ cursor: "pointer" }} onClick={() => { setPage("landing"); window.scrollTo(0, 0); }}>Maistė<em>.</em></div>
         <div className="nav-right">
           <button className="nav-cta" onClick={scrollToForm}>Būkite tarp pirmų</button>
         </div>
       </nav>
 
       <section className="hero">
-        <div className="blob b1"/><div className="blob b2"/><div className="blob b3"/>
+        <div className="blob b1" /><div className="blob b2" /><div className="blob b3" />
         <div className="page-col">
           <div className="hero-eyebrow-container fu">
-            <div style={{fontFamily:"'Fraunces', serif",fontWeight:900,fontSize:"1.2rem",marginBottom:".3rem"}}>
-              Maistė<em style={{fontStyle:"normal",color:"var(--accent)"}}>.</em>
+            <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 900, fontSize: "1.2rem", marginBottom: ".3rem" }}>
+              Maistė<em style={{ fontStyle: "normal", color: "var(--accent)" }}>.</em>
             </div>
-            <div style={{fontSize:".72rem",fontWeight:600,letterSpacing:".1em",textTransform:"uppercase" as const,color:"var(--accent)"}}>
+            <div style={{ fontSize: ".72rem", fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase" as const, color: "var(--accent)" }}>
               Nauja lietuviška programėlė
             </div>
           </div>
-          <h1 className="hero-h1 fu1">Žinokite, ką valgote.<br/><em>Kiekvieną dieną.</em></h1>
-          <p className="hero-sub fu2">Nauja programėlė, sukurta tik <strong>Lietuvai!</strong> <br/>
-          Atpažįsta lietuvišką maistą, bendrauja lietuviškai ir veikia su pažangia DI integracija.{" "}
-          <strong>Nufotografuok</strong> patiekalą ir akimirksniu sužinok kalorijas, maistinę vertę bei porcijos dydį.{" "}
-          Gauk <strong>individualius</strong> mitybos planus, naudingus patarimus ir išmanų DI padėjėją kasdieniams sprendimams.<br/>
-          Greita.{" "} Paprasta.{" "} Lietuviška. 🌿
+          <h1 className="hero-h1 fu1">Žinokite, ką valgote.<br /><em>Kiekvieną dieną.</em></h1>
+          <p className="hero-sub fu2">Nauja programėlė, sukurta tik <strong>Lietuvai!</strong> <br />
+            Atpažįsta lietuvišką maistą, bendrauja lietuviškai ir veikia su pažangia DI integracija.{" "}
+            <strong>Nufotografuok</strong> patiekalą ir akimirksniu sužinok kalorijas, maistinę vertę bei porcijos dydį.{" "}
+            Gauk <strong>individualius</strong> mitybos planus, naudingus patarimus ir išmanų DI padėjėją kasdieniams sprendimams.<br />
+            Greita.{" "} Paprasta.{" "} Lietuviška. 🌿
           </p>
           <div className="hero-chips fu3">
             <div className="chip">📸 Nuotrauka arba tekstas</div>
@@ -619,18 +638,18 @@ export default function LandingPage() {
             <div><div className="pill-val">5s</div><div className="pill-lbl">Suskaičiuoja</div></div>
           </div>
           <div className="hero-row fu4" id="reg-form">
-            <PhoneCamera/>
+            <PhoneCamera />
             <div className="form-box">
               <p className="hf-title">Registruokitės į demo 🌿</p>
               <p className="hf-desc">Būsite tarp pirmų, kurie išbandys programėlę.</p>
-              <div className="fg"><label>El. paštas <span className="req">*</span></label><input type="email" placeholder="jusu@gmail.com" value={email} onChange={e=>setEmail(e.target.value)}/></div>
-              <div className="fg"><label>Vardas <span style={{fontWeight:400,opacity:.6}}>(neprivaloma)</span></label><input type="text" placeholder="Jūsų vardas" value={name} onChange={e=>setName(e.target.value)}/></div>
-              <button onClick={handleSubmit} className="btn" disabled={loading}>{loading?"Siunčiama...":"Noriu išbandyti →"}</button>
+              <div className="fg"><label>El. paštas <span className="req">*</span></label><input type="email" placeholder="jusu@gmail.com" value={email} onChange={e => setEmail(e.target.value)} /></div>
+              <div className="fg"><label>Vardas <span style={{ fontWeight: 400, opacity: .6 }}>(neprivaloma)</span></label><input type="text" placeholder="Jūsų vardas" value={name} onChange={e => setName(e.target.value)} /></div>
+              <button onClick={handleSubmit} className="btn" disabled={loading}>{loading ? "Siunčiama..." : "Noriu išbandyti →"}</button>
               <p className="hf-note">
-                🔒 <span style={{fontWeight:700,color:"var(--brown)"}}>Jokio spam&apos;o</span>, tik demo versija. Ištrinsime jūsų duomenis bet kuriuo metu, kreipkites: <span style={{fontWeight:700,color:"var(--brown)"}}>maisteapp@gmail.com</span>.
+                🔒 <span style={{ fontWeight: 700, color: "var(--brown)" }}>Jokio spam&apos;o</span>, tik demo versija. Ištrinsime jūsų duomenis bet kuriuo metu, kreipkites: <span style={{ fontWeight: 700, color: "var(--brown)" }}>maisteapp@gmail.com</span>.
               </p>
             </div>
-            <PhoneAI/>
+            <PhoneAI />
           </div>
         </div>
       </section>
@@ -639,7 +658,7 @@ export default function LandingPage() {
         <div className="sec-inner">
           <div>
             <p className="sec-tag">Kaip tai veikia?</p>
-            <h2 className="sec-title">Nufotografuokite —<br/><em>DI parodo dienos likutį.</em></h2>
+            <h2 className="sec-title">Nufotografuokite —<br /><em>DI parodo dienos likutį.</em></h2>
             <p className="sec-body">Nebereikia ieškoti kalorijų lentelėse. <strong>Tiesiog nufotografuokite</strong> ką valgote. DI atpažįsta ir <strong>suskaičiuoja viską per sekundes.</strong></p>
             <div className="steps">
               <div className="step"><div className="step-n">1</div><div className="step-t"><strong>Atidarykite kamerą</strong> ir nukreipkite į maistą</div></div>
@@ -650,7 +669,7 @@ export default function LandingPage() {
           <div className="foto-wrap">
             <div className="foto-float">
               <div className="badge tl"><div className="bdg-l">Atpažinta per</div><div className="bdg-v"><em>3.2s</em> ⚡</div></div>
-              <PhotoPhone/>
+              <PhotoPhone />
               <div className="badge br"><div className="bdg-l">Sveikumo lygis</div><div className="bdg-v"><em>72</em>/100</div></div>
             </div>
           </div>
@@ -661,7 +680,7 @@ export default function LandingPage() {
         <div className="sec-inner rev">
           <div>
             <p className="sec-tag">DI padėjėjas</p>
-            <h2 className="sec-title">Klauskite kaip<br/><em>gero draugo.</em></h2>
+            <h2 className="sec-title">Klauskite kaip<br /><em>gero draugo.</em></h2>
             <p className="sec-body"><strong>Tiesiog paklauskite lietuviškai</strong> — DI atsako per sekundes.</p>
             <div className="ai-examples">
               <div className="ai-ex">💬 <strong>„Kiek kalorijų šaltibarščiuose?"</strong></div>
@@ -669,7 +688,7 @@ export default function LandingPage() {
               <div className="ai-ex">💬 <strong>„Ką valgyti, kad gautum daugiau baltymų?"</strong></div>
             </div>
           </div>
-          <div style={{display:"flex",justifyContent:"center"}}><AIChatMockup/></div>
+          <div style={{ display: "flex", justifyContent: "center" }}><AIChatMockup /></div>
         </div>
       </section>
 
@@ -677,7 +696,7 @@ export default function LandingPage() {
         <div className="prog-sec-inner">
           <div>
             <p className="sec-tag">Progreso sekimas</p>
-            <h2 className="sec-title">Sekite kalorijų balansą<br/><em>visą dieną</em></h2>
+            <h2 className="sec-title">Sekite kalorijų balansą<br /><em>visą dieną</em></h2>
             <p className="sec-body">Matykite kiek suvalgėte ir kiek liko — realiu laiku.</p>
             <ul className="feat-list">
               <li>Aiški dienos suvestinė vienoje vietoje</li>
@@ -685,7 +704,7 @@ export default function LandingPage() {
               <li>Savaitiniai ir mėnesiniai grafikai</li>
             </ul>
           </div>
-          <ProgressPhone/>
+          <ProgressPhone />
         </div>
       </section>
 
@@ -701,7 +720,7 @@ export default function LandingPage() {
               <li>Priminimų sistema</li>
             </ul>
           </div>
-          <div style={{display:"flex",justifyContent:"center",width:"100%"}}><PcMockup/></div>
+          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}><PcMockup /></div>
         </div>
       </section>
 
@@ -713,7 +732,7 @@ export default function LandingPage() {
             <p className="gs-sub">Programa sukurta taip, kad naudotis būtų paprasta ir malonu</p>
           </div>
           <div className="gs-grid">
-            {[["📸","Maisto nuotraukos","Nufotografuokite patiekalą ir DI suskaičiuos kalorijas."],["🇱🇹","Lietuviški patiekalai","Cepelinai, šaltibarščiai, kugelis ir šimtai kitų valgių."],["🤖","DI patarimai","Klauskite DI bet kurį mitybos klausimą lietuviškai."],["🎯","Asmeniniai tikslai","Programa prisitaiko prie jūsų tikslo."],["📊","Progresas ir grafikai","Dienos, savaitės ir mėnesio suvestinės."],["🔔","Priminimai","Programa primena įvesti valgius."]].map(([icon,title,desc])=>(
+            {[["📸", "Maisto nuotraukos", "Nufotografuokite patiekalą ir DI suskaičiuos kalorijas."], ["🇱🇹", "Lietuviški patiekalai", "Cepelinai, šaltibarščiai, kugelis ir šimtai kitų valgių."], ["🤖", "DI patarimai", "Klauskite DI bet kurį mitybos klausimą lietuviškai."], ["🎯", "Asmeniniai tikslai", "Programa prisitaiko prie jūsų tikslo."], ["📊", "Progresas ir grafikai", "Dienos, savaitės ir mėnesio suvestinės."], ["🔔", "Priminimai", "Programa primena įvesti valgius."]].map(([icon, title, desc]) => (
               <div className="gs-card" key={title}><span className="gs-icon">{icon}</span><h3>{title}</h3><p>{desc}</p></div>
             ))}
           </div>
@@ -721,9 +740,9 @@ export default function LandingPage() {
       </section>
 
       <footer className="footer">
-        <div className="footer-logo" onClick={handleSecretTap} style={{cursor:"default",userSelect:"none"}}>Maistė<em>.</em></div>
+        <div className="footer-logo" onClick={handleSecretTap} style={{ cursor: "default", userSelect: "none" }}>Maistė<em>.</em></div>
         <div className="footer-right">
-          <span className="footer-link" onClick={() => {setPage("privacy"); window.scrollTo(0,0);}}>Privatumo politika</span>
+          <span className="footer-link" onClick={() => { setPage("privacy"); window.scrollTo(0, 0); }}>Privatumo politika</span>
           <span>© 2026 Maistė · Lietuviška mitybos programėlė</span>
         </div>
       </footer>
