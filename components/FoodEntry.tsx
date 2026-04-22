@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { FoodItem, MealType } from '@/types';
 import { searchLocalFood, searchRemoteFood, FoodSearchResult } from '@/services/foodService';
-import { Search, Camera, Loader2, X, ChevronLeft, Check } from 'lucide-react';
+import { Search, Camera, Loader2, X, ChevronLeft, Check, ScanBarcode } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface Props {
@@ -35,7 +35,12 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [photoItems, setPhotoItems] = useState<FoodSearchResult[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [tab, setTab] = useState<'search' | 'camera' | 'manual'>('search');
+  const [tab, setTab] = useState<'search' | 'camera' | 'barcode' | 'manual'>('search');
+
+  // Barcode state
+  const [barcodePreview, setBarcodePreview] = useState<string | null>(null);
+  const [barcodeScanning, setBarcodeScanning] = useState(false);
+  const [barcodeInfo, setBarcodeInfo] = useState<{ barcode: string | null; found: boolean } | null>(null);
   const [showMealPicker, setShowMealPicker] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -161,6 +166,63 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
     }
   };
 
+  const handleBarcodeUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setBarcodeScanning(true);
+    setBarcodeInfo(null);
+    setSelected(null);
+    try {
+      const reader = new FileReader();
+      reader.onload = async (ev) => {
+        const dataUrl = ev.target?.result as string;
+        setBarcodePreview(dataUrl);
+        const base64 = dataUrl.split(',')[1];
+        try {
+          const res = await fetch('/api/barcode-lookup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ base64Image: base64, mimeType: file.type }),
+          });
+          const data = await res.json();
+          if (data.error) { toast.error('Nepavyko nuskaityti barkodo'); setBarcodeScanning(false); return; }
+
+          if (!data.barcode) {
+            toast.error('Barkodas neaptiktas nuotraukoje');
+            setBarcodeInfo({ barcode: null, found: false });
+          } else if (!data.found) {
+            toast('Barkodas nuskaitytas, bet produktas nerastas', { icon: '🔍' });
+            setBarcodeInfo({ barcode: data.barcode, found: false });
+          } else {
+            setBarcodeInfo({ barcode: data.barcode, found: true });
+            const result: FoodSearchResult = {
+              id: `barcode-${data.barcode}-${Date.now()}`,
+              name: data.brand ? `${data.brand} ${data.name}` : data.name,
+              nutrition: {
+                calories: data.calories,
+                protein: data.protein,
+                carbs: data.carbs,
+                fat: data.fat,
+              },
+              servingSize: data.estimatedServing || 100,
+              unit: 'g',
+              source: 'gemini',
+            };
+            handleSelectResult(result);
+            toast.success('Produktas rastas!');
+          }
+        } catch {
+          toast.error('Klaida nuskaitant barkodą');
+        }
+        setBarcodeScanning(false);
+      };
+      reader.readAsDataURL(file);
+    } catch {
+      toast.error('Nepavyko nuskaityti failo');
+      setBarcodeScanning(false);
+    }
+  };
+
   const [pendingManualItem, setPendingManualItem] = useState<FoodItem | null>(null);
 
   const handleAddManual = () => {
@@ -280,19 +342,21 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
 
       <div className="p-4 max-w-md mx-auto space-y-4">
         {/* Tabs */}
-        <div className="flex bg-white rounded-xl p-1 shadow-sm">
+        <div className="grid grid-cols-4 bg-white rounded-xl p-1 shadow-sm gap-0.5">
           {[
-            { id: 'search', label: 'Paieška', icon: <Search size={14} /> },
-            { id: 'camera', label: '📷 Nuotrauka', icon: null },
+            { id: 'search', label: 'Paieška', icon: <Search size={13} /> },
+            { id: 'camera', label: 'Nuotrauka', icon: <Camera size={13} /> },
+            { id: 'barcode', label: 'Barkodas', icon: <ScanBarcode size={13} /> },
             { id: 'manual', label: 'Rankiniu', icon: null },
           ].map(t => (
             <button
               key={t.id}
               onClick={() => setTab(t.id as typeof tab)}
-              className={`flex-1 flex items-center justify-center gap-1 py-2 rounded-lg text-xs font-medium transition-all
+              className={`flex flex-col items-center justify-center gap-0.5 py-2 rounded-lg text-[10px] font-medium transition-all leading-tight
                 ${tab === t.id ? 'bg-primary-500 text-white shadow' : 'text-gray-400'}`}
             >
-              {t.icon} {t.label}
+              {t.icon}
+              <span>{t.label}</span>
             </button>
           ))}
         </div>
@@ -501,6 +565,106 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
                 </button>
               </div>
             )}
+          </div>
+        )}
+
+        {/* Barcode tab */}
+        {tab === 'barcode' && (
+          <div className="space-y-3">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+              {/* Preview */}
+              <div className="relative w-full aspect-[4/3] bg-gray-900 flex items-center justify-center overflow-hidden">
+                {barcodePreview ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={barcodePreview} alt="Barkodas" className="w-full h-full object-cover" />
+                    {barcodeScanning && (
+                      <>
+                        <div className="absolute inset-0 bg-black/30" />
+                        {/* Barcode scan line */}
+                        <div
+                          className="absolute left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent"
+                          style={{ animation: 'scanline 1.4s ease-in-out infinite' }}
+                        />
+                        {/* Corner brackets */}
+                        <div className="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-green-400 rounded-tl-sm" />
+                        <div className="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-green-400 rounded-tr-sm" />
+                        <div className="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-green-400 rounded-bl-sm" />
+                        <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-green-400 rounded-br-sm" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                          <Loader2 size={28} className="text-green-400 animate-spin" />
+                          <p className="text-white text-sm font-medium">Nuskaitoma...</p>
+                        </div>
+                      </>
+                    )}
+                    {!barcodeScanning && barcodeInfo && (
+                      <div className={`absolute bottom-3 left-3 right-3 backdrop-blur-sm rounded-xl px-3 py-2 flex items-center gap-2 ${barcodeInfo.found ? 'bg-green-900/70' : 'bg-black/60'}`}>
+                        <span className="text-base">{barcodeInfo.found ? '✅' : barcodeInfo.barcode ? '🔍' : '❌'}</span>
+                        <div className="min-w-0">
+                          {barcodeInfo.barcode
+                            ? <p className="text-white text-xs font-mono">{barcodeInfo.barcode}</p>
+                            : <p className="text-white text-xs">Barkodas nerastas</p>
+                          }
+                          {barcodeInfo.found && selected && (
+                            <p className="text-green-300 text-sm font-semibold truncate">{selected.name}</p>
+                          )}
+                          {!barcodeInfo.found && barcodeInfo.barcode && (
+                            <p className="text-gray-300 text-xs">Produktas neidentifikuotas</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center gap-4 text-gray-500 px-6 text-center">
+                    <div className="relative">
+                      <ScanBarcode size={52} className="text-gray-600" />
+                      <div className="absolute inset-0 flex items-center">
+                        <div className="h-0.5 w-full bg-green-400/60 rounded" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-400">Nufotografuokite barkodą</p>
+                      <p className="text-xs text-gray-500 mt-1">EAN-13 · EAN-8 · UPC-A</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="p-4 space-y-3">
+                <div className="flex items-start gap-2 bg-blue-50 border border-blue-200 rounded-xl px-3 py-2">
+                  <span className="text-blue-500 text-sm mt-0.5">ℹ️</span>
+                  <p className="text-xs text-blue-700">Geriausi rezultatai su aiškiu, tolygiai apšviestu barkodu iš 10–20 cm atstumo.</p>
+                </div>
+                <label className="block">
+                  <span className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold cursor-pointer active:scale-95 transition-transform shadow-md
+                    ${barcodeScanning ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-green-500 text-white shadow-green-200'}`}>
+                    {barcodeScanning
+                      ? <Loader2 size={16} className="animate-spin" />
+                      : <ScanBarcode size={16} />}
+                    {barcodeScanning ? 'Nuskaitoma...' : barcodePreview ? 'Nufotografuoti iš naujo' : 'Nuskaityti barkodą'}
+                  </span>
+                  <input
+                    type="file" accept="image/*" capture="environment"
+                    onChange={handleBarcodeUpload}
+                    className="hidden"
+                    disabled={barcodeScanning}
+                  />
+                </label>
+                {/* Not found — suggest manual search */}
+                {!barcodeScanning && barcodeInfo && !barcodeInfo.found && barcodeInfo.barcode && (
+                  <button
+                    onClick={() => {
+                      setQuery(barcodeInfo.barcode!);
+                      setTab('search');
+                    }}
+                    className="w-full py-2.5 border border-gray-200 text-gray-600 rounded-xl text-sm font-medium active:scale-95 transition-transform"
+                  >
+                    {`🔍 Ieškoti „${barcodeInfo.barcode}" tekstine paieška`}
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         )}
 
