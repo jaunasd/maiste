@@ -135,7 +135,11 @@ export function FoodEntry({ onAdd, onCancel, mealType, initialItem }: Props) {
             body: JSON.stringify({ base64Image: base64, mimeType: file.type }),
           });
           const data = await res.json();
-          if (data.error) { toast.error('Nepavyko išanalizuoti'); setAnalyzing(false); return; }
+          if (data.error) {
+            toast.error(res.status === 422 ? data.error : 'Nepavyko išanalizuoti nuotraukos');
+            setAnalyzing(false);
+            return;
+          }
           const items: FoodSearchResult[] = (data.items || []).map((item: { name: string; calories: number; protein: number; carbs: number; fat: number; estimatedServing?: number }, i: number) => ({
             id: `gemini-photo-${Date.now()}-${i}`,
             name: item.name,
