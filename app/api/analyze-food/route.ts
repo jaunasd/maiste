@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
   const ai = new GoogleGenAI({ apiKey });
   const img = imagePart(mimeType, base64Image);
 
-  // ── 1. Flash greitas bandymas ──────────────────────────────────────────────
+  // ── 1. Flash — jei veikia, pasikliaujame jo rezultatu ────────────────────
   try {
     const r = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
@@ -70,17 +70,14 @@ export async function POST(req: NextRequest) {
         systemInstruction: 'Tu esi dietologas. Atpažink maistą nuotraukoje ir grąžink JSON. Naudok lietuviškus pavadinimus.',
       },
     });
-    const items = parseItems(r.text);
-    if (items) {
-      console.log('Flash rado:', items.length, 'produktų');
-      return NextResponse.json({ items });
-    }
-    console.log('Flash: tuščia, bandoma Pro...');
+    const items = parseItems(r.text) ?? [];
+    console.log('Flash atsakė, rado:', items.length, 'produktų');
+    return NextResponse.json({ items });
   } catch (e) {
-    console.error('Flash klaida:', e);
+    console.error('Flash klaida, pereinama prie Pro:', e);
   }
 
-  // ── 2–4. Pro, iki 3 bandymų ────────────────────────────────────────────────
+  // ── 2–4. Flash metė klaidą — bandome Pro ──────────────────────────────────
   const proPrompts = [
     `Pažiūrėk labai atidžiai – ankstesnis modelis nerado maisto. Identifikuok bet ką valgomą. Jei nežinai tiksliai – spėk pagal išvaizdą ir pateik apytikslę maistinę vertę su "(Panašu į ...)" pavadinime.`,
     `Dar vienas bandymas. Ieškoki maisto fone, lėkštėse, pakuotėse, net jei blogai matoma. Privalai grąžinti bent vieną produktą.`,
